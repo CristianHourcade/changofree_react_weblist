@@ -42,7 +42,7 @@ export const getServerSideProps = async ({ req, res }) => {
         if (element.productos) {
           Object.keys(element.productos).map((key) => {
             domains.push({
-              url: `https://${(element.dominio) ? element.dominio.url : element.marca+'.changofree.com'}/${element.marca}/producto/${element.productos[key].name}`,
+              url: `https://${element.marca+'.changofree.com'}/${element.marca}/producto/${element.productos[key].name}`,
               changefreq: "daily",
               priority: 0.3,
             });
