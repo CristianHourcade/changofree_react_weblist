@@ -10,7 +10,9 @@ const RouterInitial = ({ domains }) => {
   };
   return (
     <>
-      <a href="#" onClick={download} download="file.xml">Descargar XML</a>
+      <a href="#" onClick={download} download="file.xml">
+        Descargar XML
+      </a>
       {domains}
     </>
   );
@@ -25,24 +27,18 @@ export const getServerSideProps = async ({ req, res }) => {
     .once("value", (value) => {
       Object.keys(value.val()).map((key) => {
         let element = value.val()[key];
-        console.log(element);
-        if (element.dominio) {
-          domains.push({
-            url: "https://" + element.dominio.url,
-            changefreq: "daily",
-            priority: 0.3,
-          });
-        } else {
-          domains.push({
-            url: `https://${element.marca}.changofree.com`,
-            changefreq: "daily",
-            priority: 0.3,
-          });
-        }
+
+        domains.push({
+          url: `https://${element.marca}.changofree.com`,
+          changefreq: "daily",
+          priority: 0.3,
+        });
         if (element.productos) {
           Object.keys(element.productos).map((key) => {
             domains.push({
-              url: `https://${element.marca+'.changofree.com'}/${element.marca}/producto/${element.productos[key].name}`,
+              url: `https://${element.marca + ".changofree.com"}/${
+                element.marca
+              }/producto/${element.productos[key].name}`,
               changefreq: "daily",
               priority: 0.3,
             });
