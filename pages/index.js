@@ -10,9 +10,6 @@ const RouterInitial = ({ domains }) => {
   };
   return (
     <>
-      <a href="#" onClick={download} download="file.xml">
-        Descargar XML
-      </a>
       {domains}
     </>
   );
