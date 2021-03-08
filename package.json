@@ -1,0 +1,29 @@
+{
+  "name": "chango_react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "dayjs": "^1.10.4",
+    "firebase": "^8.2.3",
+    "next": "^10.0.5",
+    "next-absolute-url": "^1.2.2",
+    "node-sass": "^5.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-facebook-pixel": "^1.0.4",
+    "react-fb-pixel": "^0.1.1",
+    "reactjs-popup": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "npm run build && next export -o _static"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
