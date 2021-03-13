@@ -38,11 +38,18 @@ export const getServerSideProps = async ({ req, res }) => {
               }/producto/${element.productos[key].name}`,
               changefreq: "daily",
               priority: 0.3,
+              img: [{
+                url:element.productos[key].img[0],
+                caption:element.productos[key].name.split("-").join(' '),
+                geoLocation:'Argentina',
+                title:element.productos[key].name.split("-").join(' '),
+              }]
             });
           });
         }
       });
     });
+    console.log(domains)
   return {
     props: {
       domains: await (
